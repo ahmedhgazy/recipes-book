@@ -1,0 +1,20 @@
+<div class="card p-1 rounded-3 shadow border-0">
+  <img [src]="recipeItem.imgPath" class="img-fluid" alt="Responsive image" />
+  <div class="card-body">
+    <div class="d-flex justify-content-between align-items-center text-center">
+      <h5 class="card-title">{{ recipeItem.name }}</h5>
+      <span class="card-title rounded-pill fw-bold badge bg-danger">{{
+        "$" + recipeItem.price
+      }}</span>
+    </div>
+    <p class="card-text text-truncate">
+      {{ recipeItem.type }}
+    </p>
+    <div class="d-flex gap-2 justify-content-between align-items-center mx-auto">
+      <button class="btn btn-success px-2 btn-sm rounded-4" [routerLink]="[index]"> Show details </button>
+      <button (click)="addToFav()" class="px-2 btn btn-success rounded-4 btn-sm">
+        Add to fav💗
+      </button>
+    </div>
+  </div>
+</div>

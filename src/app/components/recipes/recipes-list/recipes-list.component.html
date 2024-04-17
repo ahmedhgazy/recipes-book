@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-12">
+    <h1 class="line">Recipes Book</h1>
+  </div>
+</div>
+<div class="row mt-3 ">
+  <form #form="ngForm" (ngSubmit)="onSearch(form)">
+    <div class=" col-12">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="search" name="userInput" [(ngModel)]="searchItem">
+        <button type="submit" class="ms-1 btn btn-outline-success">Search</button>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="row ">
+  <h4 *ngIf="filterRecipes.length==0" class=" mt-3">{{noItems}}</h4>
+  <app-recipes-item class="col-12 col col-md-6 col-lg-4 mt-4" *ngFor="let recipe of filterRecipes; let i =index"
+    [recipeItem]="recipe" [index]="i"></app-recipes-item>
+</div>

@@ -1,0 +1,31 @@
+<div class="row">
+  <p *ngIf="recipes.length==0">There is no items in the list</p>
+  <div class="col-12 col-md-6 col-lg-4 " *ngFor="let recipe of recipes; let i=index">
+    <div class="card   mt-3 p-1 rounded-3 shadow border-0 ">
+      <img [src]="recipe.imgPath" class="card-img-top img-fluid" alt="" />
+      <div class="card-body">
+        <div class=" d-flex justify-content-between align-items-center text-center">
+          <p class="card-title">
+            {{recipe.type}}
+
+          </p>
+          <span class="card-title h2
+       rounded-pill
+                badge bg-success
+                ">
+            {{"$"+recipe.price}}
+          </span>
+        </div>
+        <h5 class="card-text">
+          {{recipe.name}}
+
+        </h5>
+        <div class="d-flex  justify-content-between align-items-center">
+          <button class="btn btn-success rounded-5 btn-sm" (click)="navToDetails(i)">Show details</button>
+          <button class="btn btn-danger rounded-5 btn-sm" (click)="deleteFavRecipe(i)">Remove</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

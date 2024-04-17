@@ -1,0 +1,45 @@
+<!-- <div class="row">
+  <div class="col-12 col-md-4">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name">
+
+    </div>
+  </div>
+  <div class="col-12 col-md-2">
+    <div class="form-group">
+      <label for="amount">Amount</label>
+      <input type="number" class="form-control" id="amount">
+    </div>
+  </div> -->
+
+<div class="row">
+  <div class="col-12">
+    <form #form="ngForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-12 col-md-5 mb-2">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" required ngModel class="form-control" id="name">
+          </div>
+        </div>
+        <div class="col-12 col-md-2">
+          <div class="form-group">
+            <label for="amount">Amount</label>
+            <input required type="number" class="form-control" name="amount" pattern="^[1-9]+[0-9]*$" ngModel
+              id="amount">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 hstack gap-2 mt-2">
+        <button [disabled]="!form.valid" type="submit" class="btn btn-success">
+          {{editMode ? 'Update': 'Add'}}
+        </button>
+
+        <button (click)="deleteIngredient()" type="button" class="btn btn-danger">Delete</button>
+        <button (click)="clearIngredients()" type="button" class="btn btn-primary">Clear</button>
+      </div>
+    </form>
+  </div>
+</div>

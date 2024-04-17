@@ -1,0 +1,32 @@
+.card {
+  cursor: pointer;
+  img {
+    height: 13rem;
+  }
+
+  &:hover {
+    // background-color: rgb(238, 238, 238, 0.6);
+    background-color: rgb(40, 167, 69, 0.2);
+    // background-color: #28a745;
+    & > img:hover {
+      transform: rotateY(180deg);
+    }
+  }
+  &,
+  & > img {
+    transition: 1.2s;
+    -webkit-transition: 1.2s;
+    -moz-transition: 1.2s;
+    -ms-transition: 1.2s;
+    -o-transition: 1.2s;
+  }
+}
+/*
+
+*/
+@media (max-width: 767px) {
+  .card {
+    max-width: 24rem;
+    margin: auto;
+  }
+}

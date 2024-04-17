@@ -1,0 +1,47 @@
+.header {
+  margin-bottom: 20px;
+}
+* {
+  font: "work sans";
+  font-weight: bold;
+}
+a {
+  color: #000;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.1px;
+  color: #28a745;
+}
+
+li.active {
+  background-color: #eee;
+  color: #28a745;
+  font-weight: bolder;
+  border-radius: 7px;
+  text-transform: capitalize;
+  a: {
+    color: #28a745;
+  }
+}
+
+.sticky-navbar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  img.logo {
+    width: 30px;
+  }
+}
+@media (min-width: 769px) {
+  .header {
+    max-height: 60px;
+  }
+  img.logo {
+    width: 60px;
+  }
+}

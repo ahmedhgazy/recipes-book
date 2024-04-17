@@ -1,0 +1,61 @@
+<nav class="header navbar navbar-expand-md shadow bg-light
+sticky-navbar ">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="recipes">
+      <img src="../../../assets/pngwing.com.png" width="30px" class="img-fluid ms-3 logo" alt="No image">
+    </a>
+    <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item" *ngIf="isAuthenticated" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link " routerLink="recipes">Recipes</a>
+        </li>
+        <li class="nav-item" *ngIf="isAuthenticated" routerLinkActive="active">
+          <a class="nav-link" routerLink="shop">Shopping list</a>
+        </li>
+        <li class="nav-item" *ngIf="isAuthenticated" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['recipes/fav']">Favorites</a>
+        </li>
+
+        <li class="nav-item" *ngIf="!isAuthenticated" routerLinkActive="active">
+          <a class="nav-link" routerLink="auth">Authentication</a>
+        </li>
+        <!-- DropDown -->
+        <li *ngIf="isAuthenticated" class="nav-item dropdown" routerLinkActive="active">
+          <a appDropDown class="ms nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Manage Recipes
+          </a>
+          <ul class="dropdown-menu">
+            <li routerLinkActive="active">
+              <a class="dropdown-item " [routerLink]="['recipes/new']">New recipe</a>
+            </li>
+
+            <li routerLinkActive="active">
+              <a (click)="saveChanges()" class="dropdown-item ">Save changes</a>
+            </li>
+
+            <li routerLinkActive="active">
+              <a (click)="saveFavChanges()" class="dropdown-item ">Save Favorites</a>
+            </li>
+
+            <li routerLinkActive="active">
+              <a (click)="FetchRecipes()" class="dropdown-item ">Fetch Recipes</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item order-1" *ngIf="isAuthenticated" routerLinkActive="active">
+          <a (click)="LogOtu()" class="nav-link ">Log out</a>
+        </li>
+
+        <li class="nav-item order-1">
+          <a (click)="test()" class="nav-link ">Test</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>

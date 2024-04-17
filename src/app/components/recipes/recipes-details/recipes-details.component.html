@@ -1,0 +1,70 @@
+<div class="row" *ngIf="recipe">
+  <div class="col-12 col-md-5 mb-4">
+    <div class="row">
+      <div class="col-12">
+        <div class="card p-3 rounded-5 shadow border-0">
+          <img [src]="recipe.imgPath" class="card-img-top img-fluid" alt="" />
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center text-center">
+              <p class="card-title">
+                {{ recipe.type }}
+              </p>
+              <span class="card-title h2 rounded-pill badge bg-danger">
+                {{ "$" + recipe.price }}
+              </span>
+            </div>
+            <h5 class="card-text">
+              {{ recipe.name }}
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--?Ingredients  -->
+  <div class="col-12 col-md-7">
+    <div class="row">
+      <div class="col-12">
+        <h3>{{ recipe.name }} Ingredients :</h3>
+      </div>
+      <div class="col-12 mt-4 mb-3">
+        <ul class="list-group list-group-flush vstack gap-2">
+          <li class="list-group-item shadow rounded-4" *ngFor="let ingredient of recipe.ingredients">
+            {{ ingredient.name + "-" + ingredient.amount }}
+
+          </li>
+        </ul>
+        <p *ngIf="recipe.ingredients.length < 1">there is no ingredients for this recipe</p>
+      </div>
+      <div class="col-12 ms-2">
+        <p>{{ recipe.desc }}</p>
+      </div>
+      <div class="col-12">
+        <!-- ?DropDown -->
+        <div class="row mt-4 mb-3">
+          <div class="col-12">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <button appDropDown class="ms-auto btn btn-success dropdown-toggle" role="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  Manage Recipe
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" [routerLink]="['edit']">Edit recipe</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" (click)="deleteRecipe()">Delete recipe</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" (click)="ToShoppingList()">Add To Shopping List</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
