@@ -28,58 +28,7 @@ export class RecipesEditComponent implements OnInit {
     });
   }
 
-  /*
-   let recipeName: string = '';
-    let RecipesImage: string = '';
-    let recipeDesc: string = '';
-    let recipePrice: number = null;
-    let recipeIngredients = new FormArray([]);
-
-    this.form = new FormGroup({
-      name: new FormControl(recipeName, Validators.required),
-      price: new FormControl(recipePrice, [
-        Validators.required,
-        Validators.pattern(/^[1-9]+[0-9]*$/),
-      ]),
-      imgUrl: new FormControl(RecipesImage, Validators.required),
-      desc: new FormControl(recipeDesc, Validators.required),
-      ingredients: recipeIngredients,
-    });
-
-    if (this.editMode) {
-      this.dataPost.fetchRecipes().subscribe((recipes) => {
-        const recipe: Recipe = recipes[this.id];
-        console.log(recipe);
-        RecipesImage = recipe.imgPath;
-        recipeName = recipe.name;
-        recipePrice = recipe.price;
-        recipeDesc = recipe.desc;
-        if (recipe['ingredients']) {
-          recipe.ingredients.forEach((ingredient) => {
-            recipeIngredients.push(
-              new FormGroup({
-                name: new FormControl(ingredient.name, Validators.required),
-                amount: new FormControl(ingredient.amount, [
-                  Validators.required,
-                  Validators.pattern(/^[1-9]+[0-9]*$/),
-                ]),
-              })
-            );
-          });
-        }
-        this.form = new FormGroup({
-          name: new FormControl(recipeName, Validators.required),
-          price: new FormControl(recipePrice, [
-            Validators.required,
-            Validators.pattern(/^[1-9]+[0-9]*$/),
-          ]),
-          imgUrl: new FormControl(RecipesImage, Validators.required),
-          desc: new FormControl(recipeDesc, Validators.required),
-          ingredients: recipeIngredients,
-        });
-      });
-    }
-  */
+ 
   private initForm() {
     let recipeName: string = '';
     let recipePrice: number = null;
