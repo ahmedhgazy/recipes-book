@@ -2,9 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { authGuard } from './services/auth/recipes.guard';
-/*
-() => import('...').then(mod => mod.MODULE)
-*/
+
 const routes: Routes = [
   {
     path: '',
